@@ -45,21 +45,14 @@ On Linux simply install it via you packet manager e.g. (or see instructions and 
 
 On OS X download libspeex and libflac from the websites above (the sources, not the binaries)
 and compile and install them, or simply follow the following steps:
+You need to open Terminal into the folder that you uzipped from the websites.
+        ./configure --disable-asm-optimizations 
+	make
+	sudo make install
 
-	wget http://downloads.xiph.org/releases/speex/speex-1.2rc1.tar.gz
-	tar -xf speex-1.2rc1.tar.gz
-	cd speex-1.2rc1
-	./configure
-	make
-	sudo make install
-	cd ..
+
 	
-	wget http://sourceforge.net/projects/flac/files/flac-src/flac-1.2.1-src/flac-1.2.1.tar.gz/download -O flac-1.2.1.tar.gz
-	tar -xf flac-1.2.1.tar.gz
-	./configure --disable-asm-optimizations
-	make
-	sudo make install
-Note: you can also install libspeex via MacPorts, but libflac is not available in 64bit you need to supply `--disable-asm-optimizations` in configure to make it compile
+Note: On both of them the --disable-asm-optimizations it very important on Lion, but you might as well do it anyway.
 
 **Python requirements**
 
@@ -72,6 +65,7 @@ You also need some python packages to make it work:
 	M2Crypto
 
 You can install both via `easy_install`,
+If you install the latest Python from their website [http://www.python.org] you will get easy install.
 easy_install is available at [http://pypi.python.org/pypi/setuptools](http://pypi.python.org/pypi/setuptools),
 on Linux you can also get it via your packet manager:
 
@@ -89,15 +83,15 @@ We also need to generate certificates for`guzzoni.apple.com` or any other domain
 	cd gen_certs
 then
 
-	./gen_certs.sh
+	sudo ./gen_certs.sh
 or
 
-	./gen_certs.sh 192.168.1.1
+	sudo ./gen_certs.sh 192.168.1.1
 or
 
-	./gen_certs.sh domain.com
+	sudo ./gen_certs.sh domain.com
 this will generate a certifcaite for `guzzoni.apple.com`, `192.168.1.1` or `domain.com`
-
+Notice, you need to put your IP of the machine from which you are running the server.
 When you use Spire, just enter as address what ever parameter you supplied to `gen_certs.sh` e.g.:
 
 	https://guzzoni.apple.com
@@ -109,7 +103,7 @@ or
 	https://192.168.1.1
 
 In case you don't have Spire or want to use `guzzoni.apple.com`
-you need to setup a DNS spoofing or manipulate you hosts file
+you need to setup a DNS spoofing or manipulate you hosts file. I dont know how to do this.
 
 Please make sure to install the CA certificate on your iDevice (you can simply mail it to yourself).
 It is the CA.pem file that was copied by gen_certs.sh to the servers root. 
@@ -160,6 +154,7 @@ Thanks
 ------
 A big thanks to [Applidium](http://applidium.com/en/news/cracking_siri/) and also [plamoni](https://github.com/plamoni/SiriProxy/) for his SiriProxy which inspired me
 Thanks to everyone that contributed code or ideas.
+I, keaton876, did not write most of this code, just forked it and tried to make a better guide.
 
 Licensing
 ---------
