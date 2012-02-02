@@ -48,10 +48,10 @@ geonames_user="test2"
 class time(Plugin):
     
     localizations = {"currentTime": 
-                        {"search":{"de-DE": "Es wird gesucht ...", "en-US": "Looking up ..."}, 
+                        {"search":{"de-DE": "Es wird gesucht ...", "en-US": "Looking up time ..."}, 
                          "currentTime": {"de-DE": "Es ist @{fn#currentTime}", "en-US": "It is @{fn#currentTime}"}}, 
                      "currentTimeIn": 
-                        {"search":{"de-DE": "Es wird gesucht ...", "en-US": "Looking up ..."}, 
+                        {"search":{"de-DE": "Es wird gesucht ...", "en-US": "Looking up time ..."}, 
                          "currentTimeIn": 
                                 {
                                 "tts": {"de-DE": u"Die Uhrzeit in {0},{1} ist @{{fn#currentTimeIn#{2}}}:", "en-US": "The time in {0},{1} is @{{fn#currentTimeIn#{2}}}:"},
