@@ -27,17 +27,17 @@ fi
 cd $script_dir
 
 # Feel free to change any of these defaults
-commonName="SiriProxyCA"
+commonName="Siri Server"
 countryName="US"
-stateOrProvinceName="Missouri"
+stateOrProvinceName="Colorado"
 localityName=""
-organizationName="Siri Proxy"
+organizationName="Siri Server"
 organizationalUnitName=""
 emailAddress=""
 
 #You probably don't need to modify these unless you know what you're doing.
 SIRI_PROXY_SETTINGS=$script_dir_back
-LOG_FILE=$SIRI_PROXY_SETTINGS/cert.log
+LOG_FILE=$SIRI_PROXY_SETTINGS/cert_gen.log
 TMP_DIR=$script_dir/temp
 TMP_CA_DIR=$TMP_DIR/siriCA
 
@@ -49,7 +49,7 @@ echo "" > $LOG_FILE
 replace_dir="${TMP_DIR//\//\\/}"
 sed "s/BASE_DIR/${replace_dir}/g" openssl_base.cnf > openssl.cnf
 
-echo "Creating CA directory"
+echo "Creating CA folder"
 mkdir $TMP_CA_DIR
 mkdir -p $TMP_CA_DIR/{certs,crl,newcerts,private}
 touch $TMP_CA_DIR/index.txt
