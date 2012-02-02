@@ -48,7 +48,7 @@ and compile and install them, or simply follow the following steps:
 You need to open Terminal into the folder that you uzipped from the websites.
        
        
-       ./configure --disable-asm-optimizations 
+        ./configure --disable-asm-optimizations 
 	make
 	sudo make install
 
